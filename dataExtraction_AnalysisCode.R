@@ -8,7 +8,7 @@ library(patchwork)
 library(ggthemes)
 library(extrafont)
 
-MD_dat <- read_csv("metaDigitiseExtraction_Analysis.csv") %>%
+MD_dat <- read_csv("metaDigitiseExtraction_dat.csv") %>%
   janitor::clean_names() %>%
   filter(published == "Published") %>%
   filter(paper_type == "Meta-analysis")
