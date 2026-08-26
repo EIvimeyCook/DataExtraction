@@ -1,11 +1,44 @@
 cff-version: 1.2.0
 message: "If you use this data or code, please cite it as below."
+type: dataset
 authors:
   - family-names: "Ivimey-Cook"
-    given-names: "Edward"
+    given-names: "Edward R."
     orcid: "https://orcid.org/0000-0003-4910-0443"
+  - family-names: "Noble"
+    given-names: "Daniel W. A."
+  - family-names: "Nakagawa"
+    given-names: "Shinichi"
+  - family-names: "Lajeunesse"
+    given-names: "Marc J."
+  - family-names: "Pick"
+    given-names: "Joel L."
+    orcid: "https://orcid.org/0000-0002-6295-3742"
 title: "Data from: 'Advice for improving the reproducibility of data extraction in meta-analysis'"
 version: Latest
 date-released: 2023-07-26
 doi: 10.5281/zenodo.8187175
 url: "https://github.com/EIvimeyCook/DataExtraction"
+preferred-citation:
+  type: article
+  authors:
+    - family-names: "Ivimey-Cook"
+      given-names: "Edward R."
+      orcid: "https://orcid.org/0000-0003-4910-0443"
+    - family-names: "Noble"
+      given-names: "Daniel W. A."
+    - family-names: "Nakagawa"
+      given-names: "Shinichi"
+    - family-names: "Lajeunesse"
+      given-names: "Marc J."
+    - family-names: "Pick"
+      given-names: "Joel L."
+      orcid: "https://orcid.org/0000-0002-6295-3742"
+  title: "Advice for improving the reproducibility of data extraction in meta-analysis"
+  journal: "Research Synthesis Methods"
+  year: 2023
+  volume: 14
+  issue: 6
+  start: 911
+  end: 915
+  doi: 10.1002/jrsm.1663
