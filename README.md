@@ -3,8 +3,10 @@
 </div>
 
 <!-- badges: start -->
-[![Paper](https://img.shields.io/badge/paper-10.1002%2Fjrsm.1663-blue)](https://doi.org/10.1002/jrsm.1663)
+[![DOI](https://img.shields.io/badge/DOI-10.1002%2Fjrsm.1663-blue)](https://doi.org/10.1002/jrsm.1663)
 [![Zenodo](https://img.shields.io/badge/Zenodo-10.5281%2Fzenodo.8187175-blue)](https://doi.org/10.5281/zenodo.8187175)
+[![License: MIT](https://img.shields.io/badge/license-MIT-green)](LICENSE.md)
+[![Data: CC BY 4.0](https://img.shields.io/badge/data-CC%20BY%204.0-green)](LICENSE-data.md)
 <!-- badges: end -->
 
 Data and code for the paper:
