@@ -20,15 +20,17 @@ Data and code for the paper:
 
 Meta-analyses across ecology, evolution, and the health sciences depend heavily
 on effect sizes read off figures in the primary literature. That extraction step
-is rarely described in enough detail to be repeated, and the extracted values,
-the calibration data, and the source figures are almost never archived. The
+is rarely described in enough detail to be repeated. Even where a
+meta-analysis's data are archived (43 of the 55 screened here), the calibration
+data and source figures almost never are (3 and 4 of 55). The
 result is that a substantial fraction of the evidence base in any given synthesis
 cannot be verified by anyone else.
 
 This paper surveys how reproducibly data extraction is currently reported and
 sets out practical advice for improving it. This repository holds the **screening
-dataset and analysis code** behind that survey: a review of published
-meta-analyses and systematic reviews recording, for each, whether extracted data
+dataset and analysis code** behind that survey: a review of 80 screened records
+(mostly journal articles, but also theses, preprints and other record types).
+For the 55 published meta-analyses, it records whether extracted data
 were archived, whether they were interoperable, whether calibration data were
 retained, and whether the location of extracted values was documented.
 
@@ -41,9 +43,12 @@ and Joel L. Pick
 
 ### `metaDigitiseExtraction_dat.csv`
 
-Screening results for published meta-analyses and systematic reviews.
+Screening results for 80 records, published and unpublished. Of these, 55 are
+published meta-analyses, and only those have the later screening fields filled
+in; the rest are systematic reviews, databases, guidelines, theses, preprints
+and other record types.
 
-**Dimensions:** 79 rows × 19 columns. One row per screened article.
+**Dimensions:** 80 rows × 19 columns. One row per screened record.
 
 | Column | Type | Description |
 | :----- | :--- | :---------- |
@@ -57,11 +62,11 @@ Screening results for published meta-analyses and systematic reviews.
 | `Published` | categorical | Publication status |
 | `Paper_Type` | categorical | Meta-analysis, systematic review, or other |
 | `Data_Present` | categorical | Were extracted data archived? |
-| `Interoperable` | categorical | Were archived data in a non-proprietary, reusable format? |
-| `MetaDigitise_Use?` | categorical | Was `metaDigitise` or comparable software used, and was extraction from figures? |
-| `No_Effects/Studies` | numeric | Number of effect sizes or studies extracted from figures |
+| `Interoperable` | categorical | Were archived data in a non-proprietary, reusable format? All records with archived data are `Yes`; `No` occurs only where `Data_Present` is `No`, meaning no data were archived |
+| `MetaDigitise_Use?` | categorical | Was `metaDigitise` or comparable software used, and was extraction from figures? The only values are `Figures` (all 55 meta-analyses) and `NA` |
+| `No_Effects/Studies` | character | Number of effect sizes or studies extracted from figures; `No` where no count was recorded, so convert to numeric before use |
 | `No_Total` | numeric | Total number of effect sizes or studies in the synthesis |
-| `Prop_Extract` | numeric | Proportion of the synthesis derived from figure extraction |
+| `Prop_Extract` | numeric | Percentage (0-100) of the synthesis derived from figure extraction: `No_Effects/Studies` / `No_Total` × 100 |
 | `Figures_Present?` | categorical | Were the source figures themselves archived? |
 | `Caldat?` | categorical | Were calibration data archived? |
 | `Location_Given` | categorical | Was the location of extracted values within the source documented? |
@@ -77,7 +82,7 @@ The analysis script. Reads `metaDigitiseExtraction_dat.csv`, summarises the
 screening results, and produces the bar figure reported in the paper
 (`MD_bars.jpg`). Run it from the repository root.
 
-Depends on `tidyverse`, `hablar`, `patchwork`, `ggthemes`, `extrafont`, and
+Depends on `tidyverse`, `janitor`, `hablar`, `patchwork`, `ggthemes`, `extrafont`, and
 [`pilot`](https://github.com/olihawkins/pilot), which is installed from GitHub.
 
 ## Related tools
